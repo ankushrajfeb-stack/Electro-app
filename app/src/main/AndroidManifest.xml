@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Needed to listen for your voice -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Needed to see the names of apps installed, so "open Spotify" works -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <!-- Used only to trigger the phone's OWN unlock prompt (fingerprint/face/PIN) -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:allowBackup="false"
+        android:label="Electro"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.Electro"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SettingsActivity" android:exported="false" />
+        <activity android:name=".LogActivity" android:exported="false" />
+
+    </application>
+</manifest>
